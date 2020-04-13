@@ -1,0 +1,185 @@
+body{
+font-family: 'Josefin sans',sans-serif;
+background-color: hsl(0, 0%, 98%);
+margin: 0;
+background-image: url(../images/bg-pattern-desktop.svg);
+
+
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  min-height: 100vh;
+
+}
+
+.left{
+  width: 60%;
+  padding: 0 40px 40px;
+}
+
+.inner-container{
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.right{
+    width: 40%;
+  }
+.bg-image{
+  background-image: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+  
+.logo{
+  margin: 60px 0;
+  width: 200px;
+}
+
+h1{
+  text-transform: uppercase;
+  font-size: 60px;
+  letter-spacing: 10px;
+  color: hsl(0, 6%, 24%);
+  transform: translateX(-100%);
+  line-height: 1.1;
+  margin-bottom: 0;
+  animation: comeinleft 0.5s ease forwards;
+}
+
+@keyframes comeinleft{
+to{
+  transform: translateX(0);
+}
+}
+h1 span{
+  color:hsl(0, 36%, 70%);
+  font-weight: 200;
+}
+
+p{
+  color:hsl(0, 36%, 70%);
+  line-height: 26px;
+  opacity: 0;
+  margin: 40px 0;
+  transform: translateX(100%);
+  animation: comeinright 0.5s ease forwards;
+}
+
+@keyframes comeinright{
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+form{
+position: relative;
+transform: translateX(-100%);
+  animation: comeinleft 0.5s ease forwards;
+}
+
+form.error{
+
+}
+
+input{
+background-color: transparent;
+border: 1px solid hsl(0, 36%, 70%);
+padding: 15px;
+border-radius: 50px;
+font-size: 16px;
+padding: 15px 30px;
+width: 100%;
+height: 56px;
+}
+
+
+input::placeholder{
+  color:hsl(0, 36%, 70%) ;
+}
+input:focus {
+outline: none;
+box-shadow: 2px 5px 10px hsl(0, 74%, 74%);
+border-width: 2px;
+}
+
+form.error input{
+  border: 2px solid hsl(0, 93%, 68%);
+}
+button{
+  background-image: linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 2px 5px 10px hsl(0, 74%, 74%);
+  width: 100px;
+  height: 55px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+button:hover{
+  opacity: 0.6;
+}
+
+.error-icon{
+  display: none;
+  position: absolute;
+  right: 110px;
+  top: 16px;
+  
+}
+
+.bg-mobile{
+  display: none;
+}
+
+small{
+    display: none;
+    color: hsl(0, 93%, 68%);
+    display: none;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+form.error .error-icon{
+  display: block;
+}
+
+form.error small{
+  display: block;
+}
+
+@media screen and (max-width:768px){
+  .left{
+    width: 100%;
+  }
+  .right{
+    display: none;    
+  }
+.logo{
+  margin: 30px;
+  width: 100px;
+}
+
+h1{
+  font-size: 40px;
+}
+  .bg-mobile{
+    display: block;
+    margin-right: -40px;
+    margin-left: -40px;
+    max-width: calc (100% + 150px);
+  
+
+
+}
